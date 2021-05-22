@@ -1,2 +1,6 @@
 node_modules
-/nbproject/private/
+.DS_Store
+dist
+dist-ssr
+*.local
+.idea

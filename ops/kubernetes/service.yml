@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: raclavsky-service
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    service: raclavsky-service
+
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: raclavsky-ingress-rule
+spec:
+  entryPoints:
+    - websecure
+  tls:
+    certResolver: letsencrypt
+    domains:
+      - main: raclavsky.cz
+  routes:
+    - match: Host(`raclavsky.cz`)
+      kind: Rule
+      services:
+        - name: raclavsky-service
+          port: 80
+          scheme: http
+
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: raclavsky-http-ingress-rule
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`raclavsky.cz`)
+      kind: Rule
+      middlewares:
+        - name: redirectscheme
+          namespace: traefik
+      services:
+        - name: raclavsky-service
+          port: 80
+          scheme: http

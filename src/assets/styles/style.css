@@ -18,3 +18,8 @@ body, html, #app {
 a {
     color: theme('colors.yellow');
 }
+
+a:hover {
+    color: theme('colors.white');
+    transition-duration: 500ms;
+}

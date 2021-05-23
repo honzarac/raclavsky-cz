@@ -12,11 +12,24 @@
         příležitostný dabér, herec, kterému za jeho hraní neplatí, milovník dýmky a divadla.
       </div>
       <div>
-        <a class="mx-3 hover:text-white" href="https://www.facebook.com/honza.raclavsky.3/" target="_blank"><span class="fa fa-lg fa-facebook"> </span></a>
-        <a class="mx-3 hover:text-white" href="https://www.linkedin.com/in/jan-raclavsky/" target="_blank"><span class="fa fa-lg fa-linkedin"> </span></a>
-        <a class="mx-3 hover:text-white" href="https://www.instagram.com/honzaraclavsky/" target="_blank"><span class="fa fa-lg fa-instagram"> </span></a>
-        <a class="mx-3 hover:text-white" href="https://github.com/honzarac" target="_blank"><span class="fa fa-lg fa-github"> </span></a>
-        <a class="mx-3 hover:text-white" href="https://twitter.com/honarac" target="_blank"><span class="fa fa-lg fa-twitter"> </span></a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="mailto:janraclav@gmail.com" target="_blank">
+          <span class="fa fa-lg fa-at"> </span>
+        </a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.facebook.com/honza.raclavsky.3/" target="_blank">
+          <span class="fa fa-lg fa-facebook"> </span>
+        </a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.linkedin.com/in/jan-raclavsky/" target="_blank">
+          <span class="fa fa-lg fa-linkedin"> </span>
+        </a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.instagram.com/honzaraclavsky/" target="_blank">
+          <span class="fa fa-lg fa-instagram"> </span>
+        </a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://github.com/honzarac" target="_blank">
+          <span class="fa fa-lg fa-github"> </span>
+        </a>
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://twitter.com/honarac" target="_blank">
+          <span class="fa fa-lg fa-twitter"> </span>
+        </a>
       </div>
     </div>
     <div class="text-center flex-shrink" style="flex-basis: 40%;">

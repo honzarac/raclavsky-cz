@@ -1,4 +1,4 @@
 build:
-	docker build -t voxfpd/raclavsky-cz:latest .
+	npm run build && docker build -t voxfpd/raclavsky-cz:latest .
 push:
 	docker push voxfpd/raclavsky-cz:latest

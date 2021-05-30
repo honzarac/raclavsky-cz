@@ -1,23 +1,24 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: raclavsky-replicaset
+  name: raclavsky-deployment
   labels:
-    app: raclavsky-replicaset
+    app: raclavsky
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: raclavsky-replicaset
+      app: raclavsky
   template:
     metadata:
       labels:
-        app: raclavsky-replicaset
-        service: raclavsky-service
+        app: raclavsky
     spec:
+      imagePullSecrets:
+        - name: dockerhubcred
       containers:
         - name: raclavsky
-          image: voxfpd/raclavsky-cz:latest
+          image: voxfpd/raclavsky-cz:1.0.0
           ports:
             - containerPort: 80
           resources:
@@ -25,7 +26,5 @@ spec:
               memory: 64Mi
               cpu: 50m
             limits:
-              memory: 128Mi
-              cpu: 100m
-      imagePullSecrets:
-        - name: dockerhubcred
+              memory: 256Mi
+              cpu: 500m

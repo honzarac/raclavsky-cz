@@ -1,6 +1,6 @@
 <template>
   <div class="flex w-full items-center justify-center justify-items-center h-full md:w-10/12 mx-auto flex-wrap md:flex-nowrap">
-    <div class="text-center flex-grow intro-text animate__animated animate__slideInDown animate__fast" style="flex-basis: 60%;">
+    <div class="text-center flex-grow intro-text animate__animated animate__fadeInDown animate__fast" style="flex-basis: 60%;">
       <div class="text-xl mb-2">Ahoj, jsem</div>
       <h1 class="text-yellow text-4xl font-bold mb-12">
         <span> </span>
@@ -12,27 +12,27 @@
         příležitostný dabér, herec, kterému za jeho hraní neplatí, milovník dýmky a divadla.
       </div>
       <div>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="mailto:janraclav@gmail.com" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="mailto:janraclav@gmail.com" target="_blank" title="E-mail">
           <span class="fa fa-lg fa-at"> </span>
         </a>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.facebook.com/honza.raclavsky.3/" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.facebook.com/honza.raclavsky.3/" target="_blank" title="Facebook">
           <span class="fa fa-lg fa-facebook"> </span>
         </a>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.linkedin.com/in/jan-raclavsky/" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.linkedin.com/in/jan-raclavsky/" target="_blank" title="LinkedIn">
           <span class="fa fa-lg fa-linkedin"> </span>
         </a>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.instagram.com/honzaraclavsky/" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://www.instagram.com/honzaraclavsky/" target="_blank" title="Instagram">
           <span class="fa fa-lg fa-instagram"> </span>
         </a>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://github.com/honzarac" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://github.com/honzarac" target="_blank" title="GitHub">
           <span class="fa fa-lg fa-github"> </span>
         </a>
-        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://twitter.com/honarac" target="_blank">
+        <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="https://twitter.com/honarac" target="_blank" title="Twitter">
           <span class="fa fa-lg fa-twitter"> </span>
         </a>
       </div>
     </div>
-    <div class="text-center flex-shrink" style="flex-basis: 40%;">
+    <div class="text-center flex-shrink animate__animated animate__fadeIn" style="flex-basis: 40%;">
       <img src="../assets/vox.jpg" class="w-80 md:w-min">
     </div>
   </div>

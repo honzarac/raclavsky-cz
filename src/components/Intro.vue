@@ -8,8 +8,8 @@
         <span> </span>
       </h1>
       <div class="mb-12 px-12 md:w-4/6 mx-auto">
-        toho času backend programátor ve <a href="https://futured.app/" target="_blank">@futuredapps</a>,
-        příležitostný dabér, herec, kterému za jeho hraní neplatí, milovník dýmky a divadla.
+        toho času backend programátor ve <a href="https://legito.com/" target="_blank">@legito</a>,
+        příležitostný dabér, herec závislý jen na divadle, milovník dýmky a divadla.
       </div>
       <div>
         <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="mailto:janraclav@gmail.com" target="_blank" title="E-mail">

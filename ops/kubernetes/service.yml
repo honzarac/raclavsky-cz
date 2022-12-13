@@ -22,9 +22,9 @@ spec:
   tls:
     certResolver: letsencrypt
     domains:
-      - main: raclavsky.cz
+      - main: raclavsky.k3s.raclavsky.cz
   routes:
-    - match: Host(`raclavsky.cz`)
+    - match: Host(`raclavsky.k3s.raclavsky.cz`)
       kind: Rule
       services:
         - name: raclavsky-service
@@ -41,7 +41,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`raclavsky.cz`)
+    - match: Host(`raclavsky.k3s.raclavsky.cz`)
       kind: Rule
       middlewares:
         - name: redirectscheme

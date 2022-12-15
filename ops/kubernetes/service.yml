@@ -15,7 +15,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: raclavsky-ingress-rule
+  name: raclavsky-k3s-ingress-rule
 spec:
   entryPoints:
     - websecure
@@ -34,7 +34,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: raclavsky-http-ingress-rule
+  name: raclavsky-k3s-http-ingress-rule
 spec:
   entryPoints:
     - web

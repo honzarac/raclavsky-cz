@@ -1,0 +1,41 @@
+name: Build & push & deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  buildPushDeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 10
+
+      - name: Docker Login
+        uses: docker/login-action@v1.9.0
+        with:
+          username: voxfpd
+          password: ${{ secrets.DOCKERHUB_PASS }}
+
+      - name: Install dependencies
+        run: cd src && yarn install
+
+      - name: Build docker image
+        run: make build
+
+      - name: Push docker image
+        run: make push
+
+      - uses: ThomasKliszowski/setup-kubectl@v1
+        with:
+          kube-config: ${{ secrets.HETZNER_KUBE_CONFIG }}
+          kube-version: 1.24.3
+
+      - name: Build k8s config
+        run: make build push
+
+      - name: Roll new deployment
+        run: kubectl apply -f ops/kubernetes

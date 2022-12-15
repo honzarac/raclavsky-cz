@@ -4,6 +4,7 @@ metadata:
   name: raclavsky-deployment
   labels:
     app: raclavsky
+  namespace: raclavskycz
 spec:
   replicas: 1
   selector:

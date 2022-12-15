@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: raclavsky-service
+  namespace: raclavskycz
 spec:
   ports:
     - port: 80
@@ -16,6 +17,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: raclavsky-ingress-rule
+  namespace: raclavskycz
 spec:
   entryPoints:
     - websecure
@@ -35,6 +37,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: raclavsky-http-ingress-rule
+  namespace: raclavskycz
 spec:
   entryPoints:
     - web
@@ -55,6 +58,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: raclavsky-cert
+  namespace: raclavskycz
 spec:
   commonName: raclavsky.k3s.raclavsky.cz
   secretName: raclavsky-cert-secret

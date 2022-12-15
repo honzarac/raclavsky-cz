@@ -34,5 +34,8 @@ jobs:
           kube-config: ${{ secrets.HETZNER_KUBE_CONFIG }}
           kube-version: 1.24.3
 
+      - name: Make kube configs
+        run: make kustomize-create
+
       - name: Roll new deployment
-        run: kubectl apply -f ops/kubernetes
+        run: make apply

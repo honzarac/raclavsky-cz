@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASS }}
 
       - name: Install dependencies
-        run: cd src && yarn install
+        run: npm install
 
       - name: Build docker image
         run: make build
@@ -33,9 +33,6 @@ jobs:
         with:
           kube-config: ${{ secrets.HETZNER_KUBE_CONFIG }}
           kube-version: 1.24.3
-
-      - name: Build k8s config
-        run: make build push
 
       - name: Roll new deployment
         run: kubectl apply -f ops/kubernetes

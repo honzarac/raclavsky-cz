@@ -7,7 +7,4 @@ resources:
 images:
 - name: voxfpd/raclavsky-cz
   newName: voxfpd/raclavsky-cz
-  newTag: 2a022fb
-- name: voxfpd/stodolawebtemp
-  newName: voxfpd/stodolawebtemp
-  newTag: 14bb197
+  newTag: 65bfda4

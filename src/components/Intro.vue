@@ -8,8 +8,10 @@
         <span> </span>
       </h1>
       <div class="mb-12 px-12 md:w-4/6 mx-auto">
-        toho času backend programátor ve <a href="https://legito.com/" target="_blank">@legito</a>,
-        příležitostný dabér, herec závislý jen na divadle, milovník dýmky a divadla.
+        toho času fullstack vývojář, fanoušek K8S, příležitostný dabér, herec závislý jen na divadle, milovník dýmky a divadla.
+        <div class="opentowork">
+          V tuto chvíli <span class="text-yellow">#OPENTOWORK</span><br>
+          <a href="/cv-raclavsky.pdf"><span class="fa fa-download"></span> Moje CV</a> </div>
       </div>
       <div>
         <a class="mx-3 transform hover:text-white hover:scale-125 duration-500 inline-block" href="mailto:janraclav@gmail.com" target="_blank" title="E-mail">
@@ -58,5 +60,12 @@ export default defineComponent({
   }
   .intro-text {
     min-width: 320px;
+  }
+  .opentowork {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #333;
+    margin: 20px 0px;
+    padding: 20px;
   }
 </style>

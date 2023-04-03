@@ -8,7 +8,8 @@ module.exports = {
     colors: {
       yellow: '#FBBF24',
       "yellow-bright": '#f8bd4f',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      green: '#40db1a',
     },
     fontFamily: {
       sans: ['Oswald'],

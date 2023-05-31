@@ -34,32 +34,12 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: raclavsky-k3s-http-ingress-rule
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`raclavsky.k3s.raclavsky.cz`, `www.raclavsky.k3s.raclavsky.cz`)
-      kind: Rule
-      middlewares:
-        - name: redirectscheme
-          namespace: traefik
-      services:
-        - name: raclavsky-service
-          port: 80
-          scheme: http
-
----
-
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
   name: raclavsky-ingress-rule
 spec:
   entryPoints:
     - websecure
   tls:
-    secretName: raclavsky-cert-secret
+    secretName: raclavsky-root-cert-secre
   routes:
     - match: Host(`raclavsky.cz`, `www.raclavsky.cz`)
       kind: Rule
@@ -67,45 +47,6 @@ spec:
         - name: raclavsky-service
           port: 80
           scheme: http
-
----
-
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: raclavsky-http-ingress-rule
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`raclavsky.cz`, `www.raclavsky.cz`)
-      kind: Rule
-      middlewares:
-        - name: redirectscheme
-          namespace: traefik
-      services:
-        - name: raclavsky-service
-          port: 80
-          scheme: http
-
----
-
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: raclavsky-cert
-spec:
-  commonName: raclavsky.cz
-  secretName: raclavsky-cert-secret
-  dnsNames:
-    - raclavsky.cz
-    - www.raclavsky.cz
-  issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
-  revisionHistoryLimit: 1
-
----
 
 ---
 

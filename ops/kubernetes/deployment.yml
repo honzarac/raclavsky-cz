@@ -15,7 +15,7 @@ spec:
         app: raclavsky
     spec:
       imagePullSecrets:
-        - name: dockerhubcred
+        - name: dockerhub-secret
       containers:
         - name: raclavsky
           image: voxfpd/raclavsky-cz:1.0.0

@@ -1,9 +1,7 @@
 module.exports = {
-  purge: [
-      './public/**/*.html',
-      './src/**/*.vue',
+  content: [
+      'dist/*.html',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       yellow: '#FBBF24',

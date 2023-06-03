@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 
 RUN npm install
-RUN npm run build
+RUN npx gulp build
 
 FROM nginx:1.20
 

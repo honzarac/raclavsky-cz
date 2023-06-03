@@ -20,9 +20,6 @@ jobs:
           username: voxfpd
           password: ${{ secrets.DOCKERHUB_PASS }}
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Build docker image
         run: make build
 

@@ -1,4 +1,9 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: raclavskycz
+---
+apiVersion: v1
 kind: Secret
 metadata:
   annotations:
@@ -37,7 +42,7 @@ spec:
         app: raclavsky
     spec:
       containers:
-      - image: voxfpd/raclavsky-cz:65bfda4
+      - image: voxfpd/raclavsky-cz:81cbf71
         name: raclavsky
         ports:
         - containerPort: 80
@@ -49,42 +54,7 @@ spec:
             cpu: 50m
             memory: 64Mi
       imagePullSecrets:
-      - name: dockerhubcred
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: raclavsky-cert
-  namespace: raclavskycz
-spec:
-  commonName: raclavsky.cz
-  dnsNames:
-  - raclavsky.cz
-  - www.raclavsky.cz
-  issuerRef:
-    kind: ClusterIssuer
-    name: letsencrypt-prod
-  revisionHistoryLimit: 1
-  secretName: raclavsky-cert-secret
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: raclavsky-http-ingress-rule
-  namespace: raclavskycz
-spec:
-  entryPoints:
-  - web
-  routes:
-  - kind: Rule
-    match: Host(`raclavsky.cz`, `www.raclavsky.cz`)
-    middlewares:
-    - name: redirectscheme
-      namespace: traefik
-    services:
-    - name: raclavsky-service
-      port: 80
-      scheme: http
+      - name: dockerhub-secret
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -102,26 +72,7 @@ spec:
       port: 80
       scheme: http
   tls:
-    secretName: raclavsky-cert-secret
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: raclavsky-k3s-http-ingress-rule
-  namespace: raclavskycz
-spec:
-  entryPoints:
-  - web
-  routes:
-  - kind: Rule
-    match: Host(`raclavsky.k3s.raclavsky.cz`, `www.raclavsky.k3s.raclavsky.cz`)
-    middlewares:
-    - name: redirectscheme
-      namespace: traefik
-    services:
-    - name: raclavsky-service
-      port: 80
-      scheme: http
+    secretName: raclavsky-root-cert-secre
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute

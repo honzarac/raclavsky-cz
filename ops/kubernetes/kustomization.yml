@@ -5,8 +5,7 @@ resources:
 - namespace.yml
 - deployment.yml
 - service.yml
-- dockerhub-secret.yml
 images:
 - name: voxfpd/raclavsky-cz
   newName: voxfpd/raclavsky-cz
-  newTag: 65bfda4
+  newTag: 81cbf71

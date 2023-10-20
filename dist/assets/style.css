@@ -9068,7 +9068,7 @@ video {
 body,
 html,
 #app {
-  background: black;
+  background: #1D1D1D;
   color: white;
   font-family: 'Oswald';
   height: 100%;

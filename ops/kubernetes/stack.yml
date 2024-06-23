@@ -42,21 +42,21 @@ spec:
         app: raclavsky
     spec:
       containers:
-      - image: voxfpd/raclavsky-cz:81cbf71
+      - image: voxfpd/raclavsky-cz:8b55440
         name: raclavsky
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 3m
+            memory: 15Mi
           requests:
-            cpu: 50m
-            memory: 64Mi
+            cpu: 2m
+            memory: 10Mi
       imagePullSecrets:
       - name: dockerhub-secret
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: raclavsky-ingress-rule
@@ -66,7 +66,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: Host(`raclavsky.cz`, `www.raclavsky.cz`)
+    match: Host(`raclavsky.cz`) || Host(`www.raclavsky.cz`)
     services:
     - name: raclavsky-service
       port: 80
@@ -74,7 +74,7 @@ spec:
   tls:
     secretName: raclavsky-root-cert-secre
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: raclavsky-k3s-ingress-rule
@@ -84,7 +84,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: Host(`raclavsky.k3s.raclavsky.cz`, `www.raclavsky.k3s.raclavsky.cz`)
+    match: Host(`raclavsky.k3s.raclavsky.cz`) || Host(`www.raclavsky.k3s.raclavsky.cz`)
     services:
     - name: raclavsky-service
       port: 80

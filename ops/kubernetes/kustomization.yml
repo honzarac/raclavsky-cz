@@ -8,4 +8,4 @@ resources:
 images:
 - name: voxfpd/raclavsky-cz
   newName: voxfpd/raclavsky-cz
-  newTag: 81cbf71
+  newTag: 8b55440

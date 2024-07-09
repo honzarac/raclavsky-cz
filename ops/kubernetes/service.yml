@@ -39,7 +39,7 @@ spec:
   entryPoints:
     - websecure
   tls:
-    secretName: raclavsky-root-cert-secre
+    secretName: raclavsky-root-cert-secret
   routes:
     - match: Host(`raclavsky.cz`) || Host(`www.raclavsky.cz`)
       kind: Rule

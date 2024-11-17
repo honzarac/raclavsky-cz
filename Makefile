@@ -1,13 +1,13 @@
 build:
 	$(eval GIT_REV=$(shell git rev-parse HEAD | cut -c1-7))
-	docker build -t voxfpd/raclavsky-cz:$(GIT_REV) .
+	docker build -t europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:$(GIT_REV) .
 push:
 	$(eval GIT_REV=$(shell git rev-parse HEAD | cut -c1-7))
-	docker push voxfpd/raclavsky-cz:$(GIT_REV)
+	docker push europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:$(GIT_REV)
 
 build-kustomize:
 	$(eval GIT_REV=$(shell git rev-parse HEAD | cut -c1-7))
-	cd ops/kubernetes && kustomize edit set image voxfpd/raclavsky-cz=voxfpd/raclavsky-cz:$(GIT_REV)
+	cd ops/kubernetes && kustomize edit set image europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz=europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:$(GIT_REV)
 	kustomize build ops/kubernetes --load-restrictor LoadRestrictionsNone > ops/kubernetes/stack.yml
 
 apply:

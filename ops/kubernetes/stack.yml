@@ -42,19 +42,18 @@ spec:
         app: raclavsky
     spec:
       containers:
-      - image: voxfpd/raclavsky-cz:4bb0deb
+      - image: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:c6a47fa
         name: raclavsky
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 3m
             memory: 15Mi
           requests:
-            cpu: 2m
+            cpu: 20m
             memory: 10Mi
       imagePullSecrets:
-      - name: dockerhub-secret
+      - name: google-artifacts-secret
 ---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute

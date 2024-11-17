@@ -15,16 +15,15 @@ spec:
         app: raclavsky
     spec:
       imagePullSecrets:
-        - name: dockerhub-secret
+        - name: google-artifacts-secret
       containers:
         - name: raclavsky
-          image: voxfpd/raclavsky-cz:1.0.0
+          image: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:latest
           ports:
             - containerPort: 80
           resources:
             requests:
               memory: 10Mi
-              cpu: 2m
+              cpu: 20m
             limits:
               memory: 15Mi
-              cpu: 3m

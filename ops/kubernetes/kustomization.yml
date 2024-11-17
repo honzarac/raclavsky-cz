@@ -6,6 +6,6 @@ resources:
 - deployment.yml
 - service.yml
 images:
-- name: voxfpd/raclavsky-cz
-  newName: voxfpd/raclavsky-cz
-  newTag: 4bb0deb
+- name: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz
+  newName: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz
+  newTag: c6a47fa

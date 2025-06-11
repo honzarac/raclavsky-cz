@@ -34,6 +34,11 @@ jobs:
             kubeConfig:stodola-planovac/global-cluster-kubeconfig
           encoding: base64
 
+      - uses: ThomasKliszowski/setup-kubectl@v1
+        with:
+          kube-config: ${{ steps.secrets.outputs.kubeConfig }}
+          kube-version: 1.24.3
+
       - name: Authorize Docker push
         run: gcloud auth configure-docker europe-west3-docker.pkg.dev
 
@@ -42,11 +47,6 @@ jobs:
 
       - name: Push docker image
         run: make push
-
-      - uses: ThomasKliszowski/setup-kubectl@v1
-        with:
-          kube-config: ${{ steps.secrets.outputs.token }}
-          kube-version: 1.24.3
 
       - name: Make kube configs
         run: make build-kustomize

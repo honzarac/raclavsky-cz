@@ -26,6 +26,12 @@ jobs:
         with:
           version: '>= 363.0.0'
 
+      - id: 'secrets'
+        uses: 'google-github-actions/get-secretmanager-secrets@v2'
+        with:
+          secrets: |-
+            kubeConfig:stodola-planovac/global-cluster-kubeconfig
+
       - name: Authorize Docker push
         run: gcloud auth configure-docker europe-west3-docker.pkg.dev
 
@@ -37,7 +43,7 @@ jobs:
 
       - uses: ThomasKliszowski/setup-kubectl@v1
         with:
-          kube-config: ${{ secrets.HETZNER_KUBE_CONFIG }}
+          kube-config: ${{ steps.secrets.outputs.token }}
           kube-version: 1.24.3
 
       - name: Make kube configs

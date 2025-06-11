@@ -42,7 +42,7 @@ spec:
         app: raclavsky
     spec:
       containers:
-      - image: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:c6a47fa
+      - image: europe-west3-docker.pkg.dev/stodola-planovac/raclavskycz/raclavskycz:2e6c00a
         name: raclavsky
         ports:
         - containerPort: 80

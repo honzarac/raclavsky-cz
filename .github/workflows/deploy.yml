@@ -27,10 +27,12 @@ jobs:
           version: '>= 363.0.0'
 
       - id: 'secrets'
+        name: 'Get kubeconfig from Google Secret manager'
         uses: 'google-github-actions/get-secretmanager-secrets@v2'
         with:
           secrets: |-
             kubeConfig:stodola-planovac/global-cluster-kubeconfig
+          encoding: base64
 
       - name: Authorize Docker push
         run: gcloud auth configure-docker europe-west3-docker.pkg.dev
